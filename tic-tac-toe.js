@@ -7,4 +7,21 @@ document.addEventListener("DOMContentLoaded" , () => {
 		squares. forEach(square => {
 			square.classsList.add("square");
 		});
+	// Add click event listener to each square
+        square.addEventListener("click", function() {
+            // Only allow the square to be clicked if it is empty
+            if (!gameState[index]) {
+                // Set the text and class based on the current player
+                square.textContent = currentPlayer;
+                square.classList.add(currentPlayer);
+
+                // Update game state
+                gameState[index] = currentPlayer;
+
+                // Switch players
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+            }
+        });
+    });
+});
 });
