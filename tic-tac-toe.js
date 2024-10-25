@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded" , () => {
 
                 // Switch players
                 currentPlayer = currentPlayer === "X" ? "O" : "X";
+
+		    // Mouseover event to add 'hover' class
+        square.addEventListener("mouseover", function() {
+            square.classList.add("hover");
+        });
+
+        // Mouseout event to remove 'hover' class
+        square.addEventListener("mouseout", function() {
+            square.classList.remove("hover");
             }
         });
     });
