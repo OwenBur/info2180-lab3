@@ -68,6 +68,19 @@ document.addEventListener("DOMContentLoaded" , () => {
                 } else {
                     // Switch players if no winner
                     currentPlayer = currentPlayer === "X" ? "O" : "X";
+
+			// Function to reset the game state
+    function resetGame() {
+        gameState.fill(null); // Clear game state array
+        currentPlayer = "X"; // Reset to "X" as the starting player
+        squares.forEach(square => {
+            square.textContent = ""; // Clear text from each square
+            square.classList.remove("X", "O"); // Remove any class for styling
+        });
+        statusDiv.textContent = "Move your mouse over a square and click to play an X or an O.";
+        statusDiv.classList.remove("you-won"); // Remove winning styling
+    }
+
                 }
             }
         });
