@@ -85,5 +85,18 @@ document.addEventListener("DOMContentLoaded" , () => {
             }
         });
     });
-});
+}); 
+const squares = document.querySelectorAll('.square');
+
+squares.forEach((square) => {
+    square.addEventListener('click', () => {
+        // Check if the square already has a value
+        if (square.textContent === 'X' || square.textContent === 'O') {
+            return; // Exit function if square is already filled
+        }
+
+        // If not filled, add the current player's mark (X or O)
+        square.textContent = currentPlayer;
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch player
+    });
 });
